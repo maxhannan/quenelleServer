@@ -20,6 +20,7 @@ const typeDefs = readFileSync("./schema.graphql", { encoding: "utf-8" });
 
 // Required logic for integrating with Express
 const app = express();
+
 // Our httpServer handles incoming requests to our Express app.
 // Below, we tell Apollo Server to "drain" this httpServer,
 // enabling our servers to shut down gracefully.
@@ -34,7 +35,7 @@ const server = new ApolloServer({
 });
 // Ensure we wait for our server to start
 await server.start();
-
+app.use(cookieParser("e2pdj;qkl"));
 app.use(
   "/",
   cors<cors.CorsRequest>(),
